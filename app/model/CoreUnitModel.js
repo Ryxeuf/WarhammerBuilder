@@ -15,7 +15,8 @@ Ext.define('WarhammerBuilder.model.CoreUnitModel', {
         hasMany: [
             {
                 model: 'WarhammerBuilder.model.UnitOptionModel',
-                associationKey:'options'
+                associationKey:'options',
+                name: "options"
             }
         ]
     }

@@ -13,24 +13,14 @@ Ext.define('WarhammerBuilder.view.Army.ComposeArmy.CoresComposition', {
                         xtype: "selectfield",
                         id: "coreSelection",
                         displayField: "name",
+                        valueField: "name",
                         flex: 3,
-                        autoSelect: false,
                         usePicker: "auto",
                         listeners:[
                             {
                                 event: 'change',
                                 fn: function() { this.parent.parent.fireEvent("configureCoreUnit"); }
-                            }
-                        ]
-                    },
-                    {
-                        xtype: "button",
-                        html: "Configurer",
-                        fkex: 1,
-                        listeners:[
-                            {
-                                event: 'tap',
-                                fn: function() { this.parent.parent.fireEvent("configureCoreUnit"); }
+
                             }
                         ]
                     }
