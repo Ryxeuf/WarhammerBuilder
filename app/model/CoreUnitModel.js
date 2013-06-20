@@ -8,6 +8,7 @@ Ext.define('WarhammerBuilder.model.CoreUnitModel', {
             { name: 'min', type: 'int' },
             { name: 'max', type: 'int' },
             { name: 'cost', type: 'int' },
+            { name: 'finalcost', type: 'int' },
             { name: 'corepoints', type: 'boolean', defaultValue: true }
         ],
 

@@ -9,10 +9,11 @@ Ext.define('WarhammerBuilder.model.ArmyModel', {
             { name: 'description', type: 'string' }
         ],
 
-        hasOne: [
+        hasMany: [
             {
                 model: 'WarhammerBuilder.model.CoreUnitModel',
-                associationKey:'cores'
+                associationKey: 'cores',
+                name: 'cores'
             }
         ]
     }

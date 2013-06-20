@@ -3,10 +3,6 @@ Ext.define('WarhammerBuilder.view.Army.ComposeArmy', {
     alias: 'widget.composearmy',
     config: {
         title: "Construction de l'armée",
-        layout: "fit",
-        tabBar:{
-            width: "100%"
-        },
         items:[
             {
                 docked: 'top',

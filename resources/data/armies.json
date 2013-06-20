@@ -16,6 +16,7 @@
                     "min": 10,
                     "max": 0,
                     "corepoints": true,
+                    "finalcost" : 0,
                     "options":[
                         {
                             "name": "Lances",
@@ -45,6 +46,7 @@
                     "min": 10,
                     "max": 0,
                     "corepoints": true,
+                    "finalcost" : 0,
                     "options":[
                         {
                             "name": "Tupak",
@@ -59,6 +61,7 @@
                     "min": 1,
                     "max": 3,
                     "corepoints": false,
+                    "finalcost" : 0,
                     "options":[]
                 }
             ]/*,
@@ -83,6 +86,7 @@
                     "min": 10,
                     "max": 0,
                     "corepoints": true,
+                    "finalcost" : 0,
                     "options":[
                         {
                             "name": "Etendard",
@@ -107,6 +111,7 @@
                     "min": 10,
                     "max": 0,
                     "corepoints": true,
+                    "finalcost" : 0,
                     "options":[
                         {
                             "name": "Championne",

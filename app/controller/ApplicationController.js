@@ -8,22 +8,30 @@ Ext.define('WarhammerBuilder.controller.ApplicationController', {
         "WarhammerBuilder.view.Army.ComposeArmy.HeroesComposition",
         "WarhammerBuilder.view.Army.ComposeArmy.CoresComposition",
         "WarhammerBuilder.view.Army.ComposeArmy.SpecialsComposition",
-        "WarhammerBuilder.view.Army.ComposeArmy.RaresComposition"
+        "WarhammerBuilder.view.Army.ComposeArmy.RaresComposition",
+        "WarhammerBuilder.view.Army.ComposeArmy.UnitComposition"
     ],
 
     config: {
         refs: {
             mainView: 'main',
-            armyList: "armylist"
+            armyList: "armylist",
+            coresComposition: "corescomposition"
         },
 
         control: {
-            armyList: { itemtap: "displayArmyList" }
+            armyList: { itemtap: "displayArmyList" },
+            coresComposition: {
+                initialize: "onCoresCompositionInit",
+                configureCoreUnit: "coreUnitSelection"
+            }
         }
     },
 
+    army: null,
     displayArmyList: function(view, index, target, record){
         console.log("displayArmyList");
+        this.army = record;
         var points = Ext.getCmp("armyPts").getValue();
         var reg = new RegExp(/^[0-9]*$/);
         if(points == ""){
@@ -37,6 +45,16 @@ Ext.define('WarhammerBuilder.controller.ApplicationController', {
         Ext.Viewport.add([commposeView]);
         Ext.Viewport.setActiveItem(commposeView);
         commposeView.getAt(0).setTitle(record.get('name')+" ("+points+"pts)");
+    },
+    onCoresCompositionInit: function(){
+        console.log("onCoresCompositionInit");
+        console.log(this.army);
+        Ext.getCmp("coreSelection").setStore(this.army.coresStore);
+    },
+    coreUnitSelection: function(){
+        console.log("coreUnitSelection");
+        var unit = Ext.getCmp("coreSelection").getRecord();
+        Ext.getCmp("unitComposition").setData(unit.data);
 
     }
 });
